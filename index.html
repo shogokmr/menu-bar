@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="menuBar">
+    <ul>
+        <li class="active" id="menu1">
+            <a href="#">ホーム</a>
+            <div class="subMenu-1">
+                <ul>
+                    <li><a href="#">サイトについて</a></li>
+                    <li><a href="#">社訓</a></li>
+                    <li><a href="#">スローガン</a></li>
+                    <li><a href="#">その他</a></li>
+                </ul>
+            </div>
+        </li>
+        <li id="menu2">
+            <a href="#">オンライン相談</a>          
+              <div class="subMenu-1">
+            <ul>
+                <li><a href="#">サイトについて</a></li>
+                <li><a href="#">社訓</a></li>
+                <li><a href="#">スローガン</a></li>
+                <li><a href="#">その他</a></li>
+            </ul>
+        </div>
+       </li>
+        <li id="menu3">
+            <a href="#">ブログ</a>         
+               <div class="subMenu-1">
+            <ul>
+                <li><a href="#">サイトについて</a></li>
+                <li><a href="#">社訓</a></li>
+                <li><a href="#">スローガン</a></li>
+                <li><a href="#">その他</a></li>
+            </ul>
+        </div>
+       </li>
+        <li id="menu4">
+            <a href="#">お問い合わせ</a>       
+                 <div class="subMenu-1">
+            <ul>
+                <li><a href="#">サイトについて</a></li>
+                <li><a href="#">社訓</a></li>
+                <li><a href="#">スローガン</a></li>
+                <li><a href="#">その他</a></li>
+            </ul>
+        </div>
+       </li>
+    </ul>
+</div>
+
+    <script>
+      const menus = [];
+      for (let i = 1; i <= 4; i++) {
+        let menu = document.getElementById(`menu${i}`);
+        menus.push(menu);
+      }
+      console.log(menus); //0, 1, 2, 3
+
+      //クリックしたliタグだけ.activeをつける。それ以外はremoveしたい。
+      document.addEventListener("click", (e) => {
+        console.log(e.target.id);
+        menus.map((menu) => {
+          if (e.target.id === menu.id) {
+            menu.classList.add("active");
+          } else {
+            menu.classList.remove("active");
+          }
+        });
+      });
+    </script>
+    
+    </body>
+</html>
+
